@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://vdflme7nb45m"]
+
+[ext_resource type="Script" path="res://Scenes/StartGameMenu.gd" id="1_ex6a5"]
+[ext_resource type="Texture2D" uid="uid://c3m1xg7fcdb1p" path="res://Assets/enter_menu.png" id="2_ex1gq"]
+[ext_resource type="Texture2D" uid="uid://bsxoqa6m0w7en" path="res://Assets/start_game_button.png" id="3_ynr5r"]
+[ext_resource type="Texture2D" uid="uid://bjpwnuwhq630c" path="res://Assets/quit_game_button.png" id="4_gq2w7"]
+
+[node name="StartGameMenu" type="Node2D"]
+script = ExtResource("1_ex6a5")
+
+[node name="EnterMenu" type="Sprite2D" parent="."]
+position = Vector2(530, 1194)
+scale = Vector2(2.67311, 2.67311)
+texture = ExtResource("2_ex1gq")
+
+[node name="ButtonEnter" type="TextureButton" parent="."]
+offset_left = 318.0
+offset_top = 172.0
+offset_right = 748.0
+offset_bottom = 300.0
+texture_normal = ExtResource("3_ynr5r")
+stretch_mode = 0
+
+[node name="ButtonQuit" type="TextureButton" parent="."]
+offset_left = 318.0
+offset_top = 388.0
+offset_right = 748.0
+offset_bottom = 516.0
+texture_normal = ExtResource("4_gq2w7")
+stretch_mode = 0
+
+[connection signal="pressed" from="ButtonEnter" to="." method="_on_button_enter_pressed"]
+[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]

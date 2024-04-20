@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://7pcxln6la0ot"]
+
+[ext_resource type="Script" path="res://Scenes/Projectiles/oxygen_projectile.gd" id="1_ybis4"]
+[ext_resource type="Texture2D" uid="uid://6h62rkgqeeqk" path="res://bacteria_blue.png" id="2_inw7h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oshrq"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csl76"]
+radius = 27.0185
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_26inr"]
+radius = 44.0
+
+[node name="OxygenProjectile" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_oshrq")
+gravity_scale = 0.0
+linear_velocity = Vector2(1000, 500)
+script = ExtResource("1_ybis4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_inw7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_csl76")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_26inr")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://ceo6scc5cc1u5"]
+
+[ext_resource type="Script" path="res://Scenes/OxygenGame.gd" id="1_yp6hc"]
+[ext_resource type="Texture2D" uid="uid://d0jvajvxs84ok" path="res://area_for_buttons_blue.png" id="2_vqbh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrljv"]
+size = Vector2(38.9568, 3.11354)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wptb8"]
+size = Vector2(51, 995)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh1h1"]
+size = Vector2(45, 1002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym4ha"]
+size = Vector2(580, 47)
+
+[node name="OxygenGame" type="Node2D"]
+script = ExtResource("1_yp6hc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(269.625, 480)
+scale = Vector2(14.9653, 15.7377)
+texture = ExtResource("2_vqbh3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(269.625, 480)
+scale = Vector2(14.9653, 15.7377)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.208815, -29.0703)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wrljv")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(19.5, 475.5)
+shape = SubResource("RectangleShape2D_wptb8")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(516.5, 478)
+shape = SubResource("RectangleShape2D_nh1h1")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(257, 936.5)
+shape = SubResource("RectangleShape2D_ym4ha")
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 11.0
+one_shot = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="TimeLeftLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.686
+offset_left = 154.0
+offset_top = 84.0
+offset_right = 368.0
+offset_bottom = 139.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Time left: 0"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
