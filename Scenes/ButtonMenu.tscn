@@ -16,15 +16,13 @@ signal start_minigame(index)
 func _ready():
 	self.hide()
 	for i in range(3):
-		var button = button_preset.instantiate() as TextureButton
-		$ScrollContainer/VBoxContainer.add_child(button)
-		var index: int = $ScrollContainer/VBoxContainer.get_children().size() - 2
-		button.connect(\"pressed\", Callable(self, \"on_button_press\").bind(index))
+		add_button()
 
 func add_button():
-	var button: TextureButton = TextureButton.new()
-	button.custom_minimum_size = Vector2(0, 70)
+	var button = button_preset.instantiate() as TextureButton
 	$ScrollContainer/VBoxContainer.add_child(button)
+	var index: int = $ScrollContainer/VBoxContainer.get_children().size() - 2
+	button.connect(\"pressed\", Callable(self, \"on_button_press\").bind(index))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -37,41 +35,51 @@ func on_button_press(index: int):
 		start_minigame.emit(resourse_type)
 		
 	var amount: int = 50 + index * 10
-	if resourse_type == 0:
-		Globals.oxygen_count += amount
-		Globals.electricity_count -= amount
-	elif resourse_type == 1:
-		Globals.mood_count += amount
-		Globals.water_count -= amount
-	elif resourse_type == 2:
-		Globals.electricity_count += amount
-		Globals.mood_count -= amount
-	else:
-		Globals.water_count += amount
-		Globals.oxygen_count -= amount
+	match resourse_type:
+			0:
+				Globals.oxygen_count += amount
+				Globals.electricity_count -= amount
+			1:
+				Globals.mood_count += amount
+				Globals.water_count -= amount
+			2:
+				Globals.electricity_count += amount
+				Globals.mood_count -= amount
+			3:
+				Globals.water_count += amount
+				Globals.oxygen_count -= amount
 
 
 func _on_main_scene_change_text(index):
 	resourse_type = index
+	change_buttons_text()
 	self.show()
+	
+				
+func change_buttons_text():
 	var buttons = $ScrollContainer/VBoxContainer.get_children()
 	var buttons_count = buttons.size()
 	for i in range(1, buttons_count):
 		var button_label = buttons[i].get_child(0)
 		var amount: int = 50 + (i - 1) * 10
-		print(amount)
-		if index == 0:
-			button_label.text = \"Oxygen \" + str(amount)
-		elif index == 1:
-			button_label.text = \"Mood \" + str(amount)
-		elif index == 2:
-			button_label.text = \"Electricity \" + str(amount)
-		else:
-			button_label.text = \"Water \" + str(amount)
+		match resourse_type:
+			0:
+				button_label.text = \"Oxygen \" + str(amount)
+			1:
+				button_label.text = \"Mood \" + str(amount)
+			2:
+				button_label.text = \"Electricity \" + str(amount)
+			3:
+				button_label.text = \"Water \" + str(amount)
 
 
 func _on_close_button_pressed():
 	self.hide()
+
+
+func _on_upgrade_button_pressed():
+	add_button()
+	change_buttons_text()
 "
 
 [node name="ButtonMenu" type="Control"]
@@ -98,7 +106,7 @@ anchors_preset = -1
 anchor_left = 0.1
 anchor_top = 0.07
 anchor_right = 0.9
-anchor_bottom = 0.95
+anchor_bottom = 0.83
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -115,4 +123,20 @@ texture_normal = ExtResource("2_rwevk")
 texture_pressed = ExtResource("3_3fjc1")
 stretch_mode = 0
 
+[node name="UpgradeButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.947
+anchor_right = 0.5
+anchor_bottom = 0.947
+offset_left = -172.5
+offset_top = -70.0
+offset_right = 172.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Upgrade"
+
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

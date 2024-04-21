@@ -1,6 +1,6 @@
+Button
 TextureRect
 VBoxContainer
-Button
 CollisionShape2D
 TextureButton
 Timer

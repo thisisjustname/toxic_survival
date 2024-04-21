@@ -35,7 +35,6 @@ func show_game_buttons():
 	$GameTimer.start()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if remember_state:
 		$Label.text = "Remerber order: " + str(int($RememberTimer.get_time_left()))
@@ -79,7 +78,8 @@ func add_button(shuffle_index: int, index: int):
 			button.texture_normal = load("res://Assets/Pipe/pubp7.png")
 		8:
 			button.texture_normal = load("res://Assets/Pipe/pubp8.png")
-	button.connect("pressed", Callable(self, "get_button_indexes").bind(shuffle_index, index))
+	if shuffle_index != 0:
+		button.connect("pressed", Callable(self, "get_button_indexes").bind(shuffle_index, index))
 	$VBoxContainer.add_child(button)
 
 	

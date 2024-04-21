@@ -2,8 +2,8 @@ extends Node2D
 
 var oxygen_pojectile_scene = preload("res://Scenes/Projectiles/oxygen_projectile.tscn")
 # Called when the node enters the scene tree for the first time.
-var balls_count: int = 10
-var red_count: int = 5
+@export var balls_count: int = 15
+@export var red_count: int = 7
 var was_pressed = 0
 var game_was_started: bool = false
 
@@ -16,7 +16,16 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
+	if Input.is_action_pressed("player lose"):
+		clear_all()
+		player_lose.emit()
+		
+	if Input.is_action_pressed("player won"):
+		clear_all()
+		player_won.emit()
+		$Timer.stop()
+		
 	if game_was_started:
 		$Control/TimeLeftLabel.text = "Time left: " + str(int($Timer.get_time_left()))
 	
