@@ -1,0 +1,30 @@
+{
+  "events": [
+	{
+	  "description": "Event 1 description",
+	  "options": {
+		"a": {
+		  "text": "Option A description",
+		  "result": "Result of choosing option A"
+		},
+		"b": {
+		  "text": "Option B description",
+		  "result": "Result of choosing option B"
+		}
+	  }
+	},
+	{
+	  "description": "Event 2 description",
+	  "options": {
+		"a": {
+		  "text": "Option A description",
+		  "result": "Result of choosing option A"
+		},
+		"b": {
+		  "text": "Option B description",
+		  "result": "Result of choosing option B"
+		}
+	  }
+	}
+  ]
+}

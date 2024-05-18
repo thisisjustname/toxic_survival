@@ -1,0 +1,30 @@
+[gd_resource type="JSON" format=3 uid="uid://cvtrmiq7h7dxc"]
+
+[resource]
+data = {
+"events": [{
+"description": "Event 1 description",
+"options": {
+"a": {
+"result": "Result of choosing option A",
+"text": "Option A description"
+},
+"b": {
+"result": "Result of choosing option B",
+"text": "Option B description"
+}
+}
+}, {
+"description": "Event 2 description",
+"options": {
+"a": {
+"result": "Result of choosing option A",
+"text": "Option A description"
+},
+"b": {
+"result": "Result of choosing option B",
+"text": "Option B description"
+}
+}
+}]
+}

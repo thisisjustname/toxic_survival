@@ -43,12 +43,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(286, 423)
 size_flags_vertical = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = -17
 alignment = 1
 
 [node name="RememberTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 100.0
 one_shot = true
 
 [node name="GameTimer" type="Timer" parent="."]

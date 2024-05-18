@@ -4,6 +4,8 @@ signal stat_change
 
 var resourse_was_pressed = [0, 0, 0, 0]
 
+
+
 var oxygen_count: int = 100:
 	set(value):
 		oxygen_count = value

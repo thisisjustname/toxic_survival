@@ -20,18 +20,20 @@ func _ready():
 	
 func show_remember_buttons():
 	remember_state = true
-	add_button(0, -1)
+	$VBoxContainer.add_theme_constant_override("separation", -12)
+	add_button(-1, -1)
 	for i in 8:
 		add_button(remember_array[i], i)
-	add_button(0, -1)
+		add_button(0, -1)
 	$RememberTimer.start()
 
 func show_game_buttons():
 	game_state = true
-	add_button(0, -1)
+	$VBoxContainer.add_theme_constant_override("separation", -17)
+	add_button(-1, -1)
 	for i in 5:
 		add_button(game_array[i], i)
-	add_button(0, -1)
+		add_button(0, -1)
 	$GameTimer.start()
 
 
@@ -57,27 +59,33 @@ func add_button(shuffle_index: int, index: int):
 	var button = pipe_button.instantiate() as TextureButton
 	if remember_state:
 		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		if shuffle_index == 0 or shuffle_index == -1:
+			button.custom_minimum_size = Vector2(42, 42)
 	else:
 		button.custom_minimum_size = Vector2(100, 100)
+		if shuffle_index == 0 or shuffle_index == -1:
+			button.custom_minimum_size = Vector2(60, 60)
 	match shuffle_index:
+		-1:
+			button.texture_normal = load("res://Assets/Pipe/water3.png")
 		0:
-			button.texture_normal = load("res://Assets/Pipe/inactive.png")
+			button.texture_normal = load("res://Assets/Pipe/water.png")
 		1:
-			button.texture_normal = load("res://Assets/Pipe/pubp1.png")
+			button.texture_normal = load("res://Assets/Pipe/pipe1.png")
 		2:
-			button.texture_normal = load("res://Assets/Pipe/pubp2.png")
+			button.texture_normal = load("res://Assets/Pipe/pipe2.png")
 		3:
-			button.texture_normal = load("res://Assets/Pipe/pubp3.png")
+			button.texture_normal = load("res://Assets/Pipe/pipe3.png")
 		4:
-			button.texture_normal = load("res://Assets/Pipe/pubp4.png")
+			button.texture_normal = load("res://Assets/Pipe/pipe4.png")
 		5:
-			button.texture_normal = load("res://Assets/Pipe/pubp5.png")
+			button.texture_normal = load("res://Assets/Pipe/pipe5.png")
 		6:
-			button.texture_normal = load("res://Assets/Pipe/pubp6.png")
+			button.texture_normal = load("res://Assets/Pipe/pipe6.png")
 		7:
-			button.texture_normal = load("res://Assets/Pipe/pubp7.png")
+			button.texture_normal = load("res://Assets/Pipe/pipe7.png")
 		8:
-			button.texture_normal = load("res://Assets/Pipe/pubp8.png")
+			button.texture_normal = load("res://Assets/Pipe/pipe8.png")
 	if shuffle_index != 0:
 		button.connect("pressed", Callable(self, "get_button_indexes").bind(shuffle_index, index))
 	$VBoxContainer.add_child(button)

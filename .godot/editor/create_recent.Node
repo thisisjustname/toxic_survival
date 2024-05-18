@@ -1,10 +1,10 @@
-Button
+Label
+TextureButton
 TextureRect
+Button
 VBoxContainer
 CollisionShape2D
-TextureButton
 Timer
-Label
 CollisionPolygon2D
 Polygon2D
 StaticBody2D
