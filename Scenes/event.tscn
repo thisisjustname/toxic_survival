@@ -19,46 +19,59 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -141.0
-offset_bottom = 151.0
+offset_left = 14.0
+offset_top = -369.0
+offset_right = -14.0
+offset_bottom = 399.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_32508")
 
-[node name="EventText" type="Label" parent="TextureRect"]
+[node name="Ask" type="VBoxContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.141
-anchor_top = 0.111
-anchor_right = 0.859
-anchor_bottom = 0.512
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchor_left = 0.09
+anchor_top = 0.09
+anchor_right = 0.904
+anchor_bottom = 0.916
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="EventText" type="Label" parent="TextureRect/Ask"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "К тебе пришла смерть. Что ты будешь делать ? К тебе пришла смерть. Что ты будешь делать ?К тебе пришла смерть. Что ты будешь делать ?
+"
+autowrap_mode = 3
+
+[node name="Answer" type="VBoxContainer" parent="TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.09
+anchor_right = 0.904
+anchor_bottom = 0.916
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnswerText" type="Label" parent="TextureRect/Answer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "К тебе пришла смерть. Что ты 
-будешь делать ?"
+будешь делать ?
+"
+autowrap_mode = 3
 
-[node name="FirstVariant" type="TextureButton" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.135
-anchor_top = 0.605
-anchor_right = 0.871
-anchor_bottom = 0.695
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="OK" type="TextureButton" parent="TextureRect/Answer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
 texture_normal = ExtResource("2_l7p3r")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="TextureRect/FirstVariant"]
+[node name="Label" type="Label" parent="TextureRect/Answer/OK"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,33 +79,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Смириться"
+text = "Ок"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SecondVariant" type="TextureButton" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.135
-anchor_top = 0.856
-anchor_right = 0.871
-anchor_bottom = 0.922
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("2_l7p3r")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="TextureRect/SecondVariant"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Попытаться спастись"
-horizontal_alignment = 1
-vertical_alignment = 1
+[connection signal="pressed" from="TextureRect/Answer/OK" to="." method="_on_ok_pressed"]

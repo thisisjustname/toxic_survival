@@ -1,5 +1,5 @@
-fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1715955545
+d3f0229c30a0f0a3a85d188d4c866bd6
+::res://::1726345152
 area_for_buttons.png::CompressedTexture2D::3572904386992541947::1713616163::1713616163::1::::<><>::
 area_for_buttons_blue.png::CompressedTexture2D::8933838104886190370::1713617144::1713617144::1::::<><>::
 area_for_buttons_blue_larger.png::CompressedTexture2D::5282337249399369068::1713618661::1713618661::1::::<><>::
@@ -11,32 +11,54 @@ cross_button.png::CompressedTexture2D::21697369369479122::1713617533::1713617533
 cross_button_darker.png::CompressedTexture2D::1722562156797380914::1713617693::1713617693::1::::<><>::
 export_presets.cfg::TextFile::-1::1713449574::0::1::::<><>::
 README.md::TextFile::-1::1713650334::0::1::::<><>::
-::res://addons/::1713619120
-::res://addons/donut_collision_polygon2D/::1713619121
-donut_collision_polygon2D.gd::GDScript::-1::1713619120::0::1::::DonutCollisionPolygon2D<>CollisionPolygon2D<>::
-donut_collision_polygon2D.svg::CompressedTexture2D::3694459294208776373::1713619120::1713619121::1::::<><>::
-plugin.cfg::TextFile::-1::1713619120::0::1::::<><>::
-plugin.gd::GDScript::-1::1713619120::0::1::::<>EditorPlugin<>::
-README.md::TextFile::-1::1713619120::0::1::::<><>::
-::res://Assets/::1715955436
+README.ru.md::TextFile::-1::1717933937::0::1::::<><>::
+electricity_game.gd::GDScript::-1::1726345152::0::1::::<>Node2D<>::
+temp_background.png::CompressedTexture2D::7384404615146766070::1726342837::1726342837::1::::<><>::
+::res://addons/::1717933937
+::res://addons/nklbdev.aseprite_importers/::1717933938
+aseprite_image_format_loader_extension.gd::GDScript::-1::1717933937::0::1::::<>ImageFormatLoaderExtension<>::
+common.gd::GDScript::-1::1717933937::0::1::::<>Object<>::
+editor_plugin.gd::GDScript::-1::1717933937::0::1::::<>EditorPlugin<>::
+icon.png::CompressedTexture2D::2503417493381309461::1717933937::1717933938::1::::<><>::
+plugin.cfg::TextFile::-1::1717933937::0::1::::<><>::
+::res://addons/nklbdev.aseprite_importers/editor_import_plugins/::1717933937
+_animation_importer_base.gd::GDScript::-1::1717933937::0::1::::<><>::
+_importer_base.gd::GDScript::-1::1717933937::0::1::::<>EditorImportPlugin<>::
+animated_sprite_2d.gd::GDScript::-1::1717933937::0::1::::<><>::
+animated_sprite_3d.gd::GDScript::-1::1717933937::0::1::::<><>::
+sprite_2d.gd::GDScript::-1::1717933937::0::1::::<><>::
+sprite_3d.gd::GDScript::-1::1717933937::0::1::::<><>::
+sprite_frames.gd::GDScript::-1::1717933937::0::1::::<><>::
+texture_rect.gd::GDScript::-1::1717933937::0::1::::<><>::
+::res://Assets/::1726342827
 enter_menu.png::CompressedTexture2D::6764521602175378783::1710368822::1710370070::1::::<><>::
 events.tres::JSON::6287084325884128268::1715931781::0::1::::<><>::
 Fan.png::CompressedTexture2D::2933688738993336943::1710372606::1710372608::1::::<><>::
+filter.png::CompressedTexture2D::3178976223929348744::1716927700::1716927683::1::::<><>::
+first_plant.png::CompressedTexture2D::4138439952833508001::1717771382::1717771382::1::::<><>::
 Garbage_to_energy.png::CompressedTexture2D::7938253592353680010::1710372681::1710372682::1::::<><>::
+generator5.aseprite::CompressedTexture2D::7367318232914816653::1717771481::1717934313::1::::<><>::
+generator5.png::CompressedTexture2D::4560842179032006748::1717934258::1717934259::1::::<><>::
 green.png::CompressedTexture2D::9104279138767907128::1712843163::1712843163::1::::<><>::
 Human.png::CompressedTexture2D::6551820881602056720::1710372700::1710372748::1::::<><>::
+image (14)2.png::CompressedTexture2D::8317264384141171467::1717419116::1717419116::1::::<><>::
+image (14) копия.png::CompressedTexture2D::186899444608843495::1717374154::1717374154::1::::<><>::
+image (14).png::CompressedTexture2D::5751014723718829412::1717373864::1717373864::1::::<><>::
 Menu (3).png::CompressedTexture2D::6375438518606393913::1710296042::1710370090::1::::<><>::
 Menu_bar.png::CompressedTexture2D::3856022854393155183::1710375336::1710375336::1::::<><>::
 Plant_1 (3).png::CompressedTexture2D::6133326811084650675::1710372658::1710372660::1::::<><>::
 Plant_2.png::CompressedTexture2D::5452976367616237774::1710372746::1710372748::1::::<><>::
 Plant_3.png::CompressedTexture2D::5544687612430311983::1710372769::1710372782::1::::<><>::
 quit_game_button.png::CompressedTexture2D::3050446016701296028::1710368897::1710370081::1::::<><>::
+Seconed_2 копия.png::CompressedTexture2D::4563661581756916024::1716927752::1716927752::1::::<><>::
 Seconed_2.png::CompressedTexture2D::5118203887547103064::1710254599::1710370082::1::::<><>::
 start_game_button.png::CompressedTexture2D::3698179216590739861::1710368897::1710370085::1::::<><>::
+temp_background.png::CompressedTexture2D::447059770411151611::1726342827::1726342827::1::::<><>::
+water2 копия.png::CompressedTexture2D::8326546687937903340::1716748178::1716748178::1::::<><>::
 Water_clear.png::CompressedTexture2D::3176651534517092370::1710372814::1710372815::1::::<><>::
 white.png::CompressedTexture2D::8070625301030866548::1712937253::1712937253::1::::<><>::
-::res://Assets/Events/::1715955459
-events.json::JSON::-1::1715955448::0::1::::<><>::
+::res://Assets/Events/::1716297687
+events.json::JSON::-1::1716297687::0::1::::<><>::
 ::res://Assets/Pipe/::1714075585
 pipe1.png::CompressedTexture2D::1547439725361438844::1714074804::1714074804::1::::<><>::
 pipe2.png::CompressedTexture2D::7177350549234272717::1714074804::1714074804::1::::<><>::
@@ -48,23 +70,30 @@ pipe7.png::CompressedTexture2D::981637296398217699::1714074804::1714074804::1:::
 pipe8.png::CompressedTexture2D::3348228664386743428::1714074804::1714074804::1::::<><>::
 water3.png::CompressedTexture2D::4096609344175947534::1714075584::1714075585::1::::<><>::
 water.png::CompressedTexture2D::8147578538652157367::1714074804::1714074825::1::::<><>::
-::res://Scenes/::1715955537
+::res://Scenes/::1726346196
 buttom_test.tscn::PackedScene::6761468442484749420::1713378457::0::1::::<><>::
-ButtonMenu.tscn::PackedScene::5294945665685963169::1714083726::0::1::::<><>::uid://d0jvajvxs84ok::::res://area_for_buttons_blue.png<>uid://krl8q2dr8m5::::res://cross_button.png<>uid://ysol2gtm65xu::::res://cross_button_darker.png
-event.tscn::PackedScene::149840346625582068::1715955537::0::1::::<><>::uid://d0jvajvxs84ok::::res://area_for_buttons_blue.png<>uid://b5nwot00hrlm1::::res://button.png
-main_scene.gd::GDScript::-1::1713716024::0::1::::<>Control<>::
-main_scene.tscn::PackedScene::8350014472386623594::1714083726::0::1::::<><>::res://Scenes/main_scene.gd<>uid://ce6kcnhcha6dg::::res://Assets/Seconed_2.png<>uid://c0l0sd1y1t1we::::res://Assets/Human.png<>uid://bh2dopg21vtdv::::res://Assets/Fan.png<>uid://dldl42wus66la::::res://Assets/Garbage_to_energy.png<>uid://ctna8468gsh3p::::res://Assets/Plant_1 (3).png<>uid://bli18stv2oe1o::::res://Assets/Water_clear.png<>uid://cho58mvmvlxob::::res://Scenes/ButtonMenu.tscn<>uid://ceo6scc5cc1u5::::res://Scenes/OxygenGame.tscn<>uid://ch7v8xu360sps::::res://Scenes/PipeGame.tscn
+ButtonMenu.tscn::PackedScene::5294945665685963169::1726345883::0::1::::<><>::uid://d0jvajvxs84ok::::res://area_for_buttons_blue.png<>uid://krl8q2dr8m5::::res://cross_button.png<>uid://ysol2gtm65xu::::res://cross_button_darker.png
+event.gd::GDScript::-1::1716304847::0::1::::<>Node<>::
+event.tscn::PackedScene::149840346625582068::1726345045::0::1::::<><>::res://Scenes/event.gd<>uid://d0jvajvxs84ok::::res://area_for_buttons_blue.png<>uid://b5nwot00hrlm1::::res://button.png
+main_scene.gd::GDScript::-1::1716050352::0::1::::<>Control<>::
+main_scene.tscn::PackedScene::8350014472386623594::1726345883::0::1::::<><>::res://Scenes/main_scene.gd<>uid://b6aw3spnxvso3::::res://Assets/Seconed_2 копия.png<>uid://c0l0sd1y1t1we::::res://Assets/Human.png<>uid://bh2dopg21vtdv::::res://Assets/Fan.png<>uid://by7xrbuu4up1b::::res://Assets/first_plant.png<>uid://dc71wjc40xaiv::::res://Assets/generator5.aseprite<>uid://dqq7ennvdcfvn::::res://Assets/image (14)2.png<>uid://cho58mvmvlxob::::res://Scenes/ButtonMenu.tscn<>uid://ceo6scc5cc1u5::::res://Scenes/OxygenGame.tscn<>uid://ch7v8xu360sps::::res://Scenes/PipeGame.tscn<>uid://cet34abocbgu::::res://Scenes/event.tscn
 OxygenGame.gd::GDScript::-1::1713718757::0::1::::<>Node2D<>::
-OxygenGame.tscn::PackedScene::5084412511063370910::1714083726::0::1::::<><>::res://Scenes/OxygenGame.gd<>uid://d0jvajvxs84ok::::res://area_for_buttons_blue.png
-PipeGame.gd::GDScript::-1::1715931200::0::1::::<>Control<>::
-PipeGame.tscn::PackedScene::5331558589277062800::1714083727::0::1::::<><>::res://Scenes/PipeGame.gd<>uid://d0jvajvxs84ok::::res://area_for_buttons_blue.png
+OxygenGame.tscn::PackedScene::5084412511063370910::1726346080::0::1::::<><>::res://Scenes/OxygenGame.gd<>uid://d0jvajvxs84ok::::res://area_for_buttons_blue.png
+PipeGame.gd::GDScript::-1::1726343850::0::1::::<>Control<>::
+PipeGame.tscn::PackedScene::5331558589277062800::1726345045::0::1::::<><>::res://Scenes/PipeGame.gd<>uid://d0jvajvxs84ok::::res://area_for_buttons_blue.png
 pipe_button.gd::GDScript::-1::1713628010::0::1::::<>TextureButton<>::
 pipe_button.tscn::PackedScene::6539094292883294249::1713710171::0::1::::<><>::res://Scenes/pipe_button.gd
+electricity_game.tscn::PackedScene::6541288284643890993::1726346080::0::1::::<><>::res://electricity_game.gd<>uid://ddhcchkegi5r3::::res://temp_background.png
+garbage_item.tscn::PackedScene::3239925362890058434::1726346080::0::1::::<><>::res://Scenes/garbage_item.gd<>uid://b1rbofwcsabu2::::res://Scenes/Projectiles/temp_garbage_item.png
+garbage_item.gd::GDScript::-1::1726346078::0::1::::<>CharacterBody2D<>::
 StartGameMenu.gd::GDScript::-1::1710372396::0::1::::<>Node2D<>::
 StartGameMenu.tscn::PackedScene::1480482716288444756::1713375235::0::1::::<><>::res://Scenes/StartGameMenu.gd<>uid://c3m1xg7fcdb1p::::res://Assets/enter_menu.png<>uid://bsxoqa6m0w7en::::res://Assets/start_game_button.png<>uid://bjpwnuwhq630c::::res://Assets/quit_game_button.png
-texture_button.tscn::PackedScene::6379846152127658292::1713710171::0::1::::<><>::uid://b5nwot00hrlm1::::res://button.png<>uid://c6vit5gcpnfea::::res://button_darker.png
+temp_garbage_item2.png::CompressedTexture2D::4451013496552939057::1726346196::1726346196::1::::<><>::
+temp_garbage_item3.png::CompressedTexture2D::6913838735102430900::1726346196::1726346196::1::::<><>::
+texture_button.tscn::PackedScene::6379846152127658292::1726345883::0::1::::<><>::uid://b5nwot00hrlm1::::res://button.png<>uid://c6vit5gcpnfea::::res://button_darker.png
 ::res://Scenes/Globals/::1715931781
 Globals.gd::GDScript::-1::1715931781::0::1::::<>Node<>::
-::res://Scenes/Projectiles/::1713710171
+::res://Scenes/Projectiles/::1726346080
 oxygen_projectile.gd::GDScript::-1::1713469069::0::1::::<>RigidBody2D<>::
-oxygen_projectile.tscn::PackedScene::2277171769235814691::1713710171::0::1::::<><>::res://Scenes/Projectiles/oxygen_projectile.gd<>uid://6h62rkgqeeqk::::res://bacteria_blue.png
+oxygen_projectile.tscn::PackedScene::2277171769235814691::1726346080::0::1::::<><>::res://Scenes/Projectiles/oxygen_projectile.gd<>uid://6h62rkgqeeqk::::res://bacteria_blue.png
+temp_garbage_item.png::CompressedTexture2D::4246511054925768871::1726344537::1726344537::1::::<><>::

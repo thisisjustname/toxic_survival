@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq72rvjrbmhs1"]
+[gd_scene load_steps=12 format=3 uid="uid://dq72rvjrbmhs1"]
 
 [ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_1fks0"]
-[ext_resource type="Texture2D" uid="uid://ce6kcnhcha6dg" path="res://Assets/Seconed_2.png" id="1_whi3p"]
+[ext_resource type="Texture2D" uid="uid://b6aw3spnxvso3" path="res://Assets/Seconed_2 копия.png" id="2_54aog"]
 [ext_resource type="Texture2D" uid="uid://c0l0sd1y1t1we" path="res://Assets/Human.png" id="3_c2k85"]
 [ext_resource type="Texture2D" uid="uid://bh2dopg21vtdv" path="res://Assets/Fan.png" id="4_p42px"]
-[ext_resource type="Texture2D" uid="uid://dldl42wus66la" path="res://Assets/Garbage_to_energy.png" id="5_8ahqf"]
-[ext_resource type="Texture2D" uid="uid://ctna8468gsh3p" path="res://Assets/Plant_1 (3).png" id="5_75to6"]
-[ext_resource type="Texture2D" uid="uid://bli18stv2oe1o" path="res://Assets/Water_clear.png" id="6_a2ekg"]
+[ext_resource type="Texture2D" uid="uid://by7xrbuu4up1b" path="res://Assets/first_plant.png" id="5_s3lpk"]
+[ext_resource type="Texture2D" uid="uid://dc71wjc40xaiv" path="res://Assets/generator5.aseprite" id="6_c4ofr"]
+[ext_resource type="Texture2D" uid="uid://dqq7ennvdcfvn" path="res://Assets/image (14)2.png" id="7_jqykw"]
 [ext_resource type="PackedScene" uid="uid://cho58mvmvlxob" path="res://Scenes/ButtonMenu.tscn" id="8_qu7u7"]
 [ext_resource type="PackedScene" uid="uid://ceo6scc5cc1u5" path="res://Scenes/OxygenGame.tscn" id="9_1md86"]
 [ext_resource type="PackedScene" uid="uid://ch7v8xu360sps" path="res://Scenes/PipeGame.tscn" id="10_v8wov"]
+[ext_resource type="PackedScene" uid="uid://cet34abocbgu" path="res://Scenes/event.tscn" id="11_adaxb"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -28,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_whi3p")
+texture = ExtResource("2_54aog")
 expand_mode = 3
 
 [node name="StatsContainer" type="GridContainer" parent="."]
@@ -112,9 +113,12 @@ anchor_left = 2.225
 anchor_top = -0.275
 anchor_right = 2.225
 anchor_bottom = 0.095
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("5_75to6")
+offset_left = -33.0
+offset_top = -39.0
+offset_right = 223.0
+offset_bottom = 202.2
+scale = Vector2(0.465, 0.465)
+texture_normal = ExtResource("5_s3lpk")
 
 [node name="ElectricityElectricity" type="TextureButton" parent="Buttons"]
 layout_mode = 1
@@ -123,12 +127,12 @@ anchor_left = -3.16
 anchor_top = 1.965
 anchor_right = -0.435
 anchor_bottom = 3.765
-offset_left = 0.400002
-offset_top = 0.400002
-offset_right = -52.6
-offset_bottom = -8.60001
+offset_left = -80.6
+offset_top = -27.6
+offset_right = -61.6
+offset_bottom = 28.4
 scale = Vector2(2, 2)
-texture_normal = ExtResource("5_8ahqf")
+texture_normal = ExtResource("6_c4ofr")
 
 [node name="WaterButton" type="TextureButton" parent="Buttons"]
 layout_mode = 1
@@ -137,10 +141,12 @@ anchor_left = 1.99
 anchor_top = 2.21
 anchor_right = 2.075
 anchor_bottom = 2.21
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(1.5, 1.5)
-texture_normal = ExtResource("6_a2ekg")
+offset_left = -51.6
+offset_top = -26.4
+offset_right = 123.0
+offset_bottom = 151.6
+texture_normal = ExtResource("7_jqykw")
+stretch_mode = 0
 
 [node name="ButtonMenu" parent="." instance=ExtResource("8_qu7u7")]
 visible = false
@@ -182,6 +188,15 @@ anchor_top = 0.05
 anchor_right = 0.9
 anchor_bottom = 0.95
 
+[node name="Event" parent="." instance=ExtResource("11_adaxb")]
+visible = false
+layout_mode = 1
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="EventsTimer" type="Timer" parent="Timers"]
+one_shot = true
+
 [connection signal="change_text" from="." to="ButtonMenu" method="_on_main_scene_change_text"]
 [connection signal="start_oxygen_game" from="." to="OxygenGame" method="_on_main_scene_start_oxygen_game"]
 [connection signal="start_water_game" from="." to="PipeGame" method="_on_main_scene_start_water_game"]
@@ -194,3 +209,6 @@ anchor_bottom = 0.95
 [connection signal="player_won" from="OxygenGame" to="." method="_on_oxygen_game_player_won"]
 [connection signal="player_lose" from="PipeGame" to="." method="_on_pipe_game_player_lose"]
 [connection signal="player_won" from="PipeGame" to="." method="_on_pipe_game_player_won"]
+[connection signal="event_end" from="Event" to="." method="_on_event_event_end"]
+[connection signal="timeout" from="Timers/EventsTimer" to="." method="_on_events_timer_timeout"]
+[connection signal="timeout" from="Timers/EventsTimer" to="Event" method="_on_events_timer_timeout"]

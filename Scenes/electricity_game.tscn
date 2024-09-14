@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0gwcec01fkxt"]
+
+[ext_resource type="Script" path="res://electricity_game.gd" id="1_1dtrb"]
+[ext_resource type="Texture2D" uid="uid://ddhcchkegi5r3" path="res://temp_background.png" id="2_3pc3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcyhi"]
+size = Vector2(114, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr2s8"]
+size = Vector2(51, 295)
+
+[node name="ElectricityGame" type="Node2D"]
+script = ExtResource("1_1dtrb")
+
+[node name="BackGround" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.135, 2.135)
+texture = ExtResource("2_3pc3e")
+stretch_mode = 2
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-12, 926)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-8, 882)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-8, 822)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-3, 766)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-6, 718)
+
+[node name="GarbageSummon" type="Timer" parent="."]
+autostart = true
+
+[node name="Grarbage" type="Node2D" parent="."]
+
+[node name="WindowAreas" type="Node2D" parent="."]
+
+[node name="Area2DRed" type="Area2D" parent="WindowAreas"]
+position = Vector2(87, 111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowAreas/Area2DRed"]
+position = Vector2(3, -4.5)
+shape = SubResource("RectangleShape2D_dcyhi")
+
+[node name="Area2DGreen" type="Area2D" parent="WindowAreas"]
+position = Vector2(387, 138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowAreas/Area2DGreen"]
+position = Vector2(3, -4.5)
+shape = SubResource("RectangleShape2D_dcyhi")
+
+[node name="Area2DYellow" type="Area2D" parent="WindowAreas"]
+position = Vector2(211, 344)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowAreas/Area2DYellow"]
+position = Vector2(3, -4.5)
+shape = SubResource("RectangleShape2D_dcyhi")
+
+[node name="DeleteArea" type="Area2D" parent="."]
+position = Vector2(566, 821)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeleteArea"]
+position = Vector2(1.5, -5.5)
+shape = SubResource("RectangleShape2D_dr2s8")
+
+[connection signal="timeout" from="GarbageSummon" to="." method="_on_garbage_summon_timeout"]
+[connection signal="body_entered" from="WindowAreas/Area2DRed" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="WindowAreas/Area2DRed" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="WindowAreas/Area2DGreen" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="WindowAreas/Area2DGreen" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="body_entered" from="WindowAreas/Area2DYellow" to="." method="_on_area_2d_yellow_body_entered"]
+[connection signal="body_exited" from="WindowAreas/Area2DYellow" to="." method="_on_area_2d_yellow_body_exited"]
+[connection signal="body_entered" from="DeleteArea" to="." method="_on_delete_area_body_entered"]

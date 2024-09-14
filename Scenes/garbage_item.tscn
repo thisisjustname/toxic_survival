@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmfpdks7cl8re"]
+
+[ext_resource type="Script" path="res://Scenes/garbage_item.gd" id="1_ejwmv"]
+[ext_resource type="Texture2D" uid="uid://b1rbofwcsabu2" path="res://Scenes/Projectiles/temp_garbage_item.png" id="1_rpl6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qb8qq"]
+size = Vector2(43, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxw8c"]
+size = Vector2(50, 50)
+
+[node name="GarbageItem" type="CharacterBody2D"]
+script = ExtResource("1_ejwmv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rpl6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_qb8qq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_yxw8c")

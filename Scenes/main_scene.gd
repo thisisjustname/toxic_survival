@@ -14,6 +14,7 @@ func _ready():
 	$GameResult.hide()
 	Globals.connect("stat_change", update_stat_text)
 	update_stat_text()
+	$Timers/EventsTimer.start()
 
 func update_stat_text():
 	oxygen_label.text = "Oxygen: " + str(Globals.oxygen_count)
@@ -85,3 +86,14 @@ func end_game_screen(str: String):
 	for item in set_active:
 		item.mouse_filter = MOUSE_FILTER_STOP
 	$ButtonMenu.show()
+
+
+func _on_events_timer_timeout():
+	$ButtonMenu.visible = false
+
+
+func _on_event_event_end(resourse_type, amount, duration):
+	print(resourse_type)
+	print(amount)
+	print(duration)
+	$ButtonMenu.visible = true
