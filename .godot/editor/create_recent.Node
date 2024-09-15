@@ -1,14 +1,14 @@
+Label
+Timer
+TextEdit
 CollisionShape2D
 Area2D
 Node2D
 Sprite2D
 CharacterBody2D
-Timer
 Marker2D
 TextureRect
-Label
 VBoxContainer
 TextureButton
 Button
 CollisionPolygon2D
-Polygon2D

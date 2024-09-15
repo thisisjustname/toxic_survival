@@ -7,6 +7,7 @@ extends Control
 signal change_text(index)
 signal start_oxygen_game
 signal start_water_game
+signal start_electricity_game
 
 
 # Called when the node enters the scene tree for the first time.
@@ -53,7 +54,7 @@ func _on_button_menu_start_minigame(index):
 		1:
 			print("mood mini game")
 		2:
-			print("elec mini game")
+			start_electricity_game.emit()
 		3:
 			start_water_game.emit()
 
@@ -97,3 +98,8 @@ func _on_event_event_end(resourse_type, amount, duration):
 	print(amount)
 	print(duration)
 	$ButtonMenu.visible = true
+
+
+func _on_electricity_game_electricity_game_end(score: int) -> void:
+	Globals.electricity_count += score
+	end_game_screen("Player earned " + str(score) + "electricity")

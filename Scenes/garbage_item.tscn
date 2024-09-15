@@ -1,7 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmfpdks7cl8re"]
+[gd_scene load_steps=9 format=3 uid="uid://bmfpdks7cl8re"]
 
 [ext_resource type="Script" path="res://Scenes/garbage_item.gd" id="1_ejwmv"]
 [ext_resource type="Texture2D" uid="uid://b1rbofwcsabu2" path="res://Scenes/Projectiles/temp_garbage_item.png" id="1_rpl6b"]
+[ext_resource type="Shader" path="res://test.gdshader" id="2_k58t8"]
+[ext_resource type="Texture2D" uid="uid://bih2s4wv07ixb" path="res://background_noise.png" id="3_ew0dh"]
+[ext_resource type="Texture2D" uid="uid://bfl1eqpe37c0s" path="res://Assets/lightning_noise.jpg" id="4_4yl7r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g62f1"]
+shader = ExtResource("2_k58t8")
+shader_parameter/use_color_gradient = false
+shader_parameter/color_effect_mod = 0.5
+shader_parameter/intensive = 0.2
+shader_parameter/lightning_thin = 10.0
+shader_parameter/number_lightning = 5
+shader_parameter/speed = 0.39
+shader_parameter/border_thickness = 0.0
+shader_parameter/outside_extend = 0.162
+shader_parameter/lightning_color = Color(0.5, 0.7, 1, 1)
+shader_parameter/lightning_noise = ExtResource("4_4yl7r")
+shader_parameter/background_noise = ExtResource("3_ew0dh")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qb8qq"]
 size = Vector2(43, 44)
@@ -10,16 +27,23 @@ size = Vector2(43, 44)
 size = Vector2(50, 50)
 
 [node name="GarbageItem" type="CharacterBody2D"]
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("1_ejwmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_g62f1")
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(1.7093, 1.7093)
 texture = ExtResource("1_rpl6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_qb8qq")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("RectangleShape2D_yxw8c")

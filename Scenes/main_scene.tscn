@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq72rvjrbmhs1"]
+[gd_scene load_steps=13 format=3 uid="uid://dq72rvjrbmhs1"]
 
 [ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_1fks0"]
 [ext_resource type="Texture2D" uid="uid://b6aw3spnxvso3" path="res://Assets/Seconed_2 копия.png" id="2_54aog"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ceo6scc5cc1u5" path="res://Scenes/OxygenGame.tscn" id="9_1md86"]
 [ext_resource type="PackedScene" uid="uid://ch7v8xu360sps" path="res://Scenes/PipeGame.tscn" id="10_v8wov"]
 [ext_resource type="PackedScene" uid="uid://cet34abocbgu" path="res://Scenes/event.tscn" id="11_adaxb"]
+[ext_resource type="PackedScene" uid="uid://c0gwcec01fkxt" path="res://Scenes/electricity_game.tscn" id="12_nunhm"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -197,7 +198,11 @@ layout_mode = 1
 [node name="EventsTimer" type="Timer" parent="Timers"]
 one_shot = true
 
+[node name="ElectricityGame" parent="." instance=ExtResource("12_nunhm")]
+visible = false
+
 [connection signal="change_text" from="." to="ButtonMenu" method="_on_main_scene_change_text"]
+[connection signal="start_electricity_game" from="." to="ElectricityGame" method="_on_main_scene_start_electricity_game"]
 [connection signal="start_oxygen_game" from="." to="OxygenGame" method="_on_main_scene_start_oxygen_game"]
 [connection signal="start_water_game" from="." to="PipeGame" method="_on_main_scene_start_water_game"]
 [connection signal="pressed" from="Buttons/OxygenButton" to="." method="_on_oxygen_button_pressed"]
@@ -212,3 +217,4 @@ one_shot = true
 [connection signal="event_end" from="Event" to="." method="_on_event_event_end"]
 [connection signal="timeout" from="Timers/EventsTimer" to="." method="_on_events_timer_timeout"]
 [connection signal="timeout" from="Timers/EventsTimer" to="Event" method="_on_events_timer_timeout"]
+[connection signal="electricity_game_end" from="ElectricityGame" to="." method="_on_electricity_game_electricity_game_end"]
